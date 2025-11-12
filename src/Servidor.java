@@ -7,8 +7,8 @@ public class Servidor {
     public static void main(String[] args) {
         InetSocketAddress dir = new InetSocketAddress("localhost",8000);
         try (ServerSocket serverSocket = new ServerSocket()) {
+            serverSocket.bind(dir);
             while (true) {
-                serverSocket.bind(dir);
                 Socket socket = serverSocket.accept();
                 RealizacionOperacion operacion = new RealizacionOperacion(socket);
                 operacion.start();
