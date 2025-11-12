@@ -4,16 +4,17 @@ import java.net.Socket;
 
 public class Cliente {
     public static void main(String[] args) {
-        MensajeCalc<Integer> operarEnteros = new MensajeCalc<>(Operaciones.SUMA, 2, 3);
         InetSocketAddress dir = new InetSocketAddress("localhost", 8000);
+        Operaciones operacion;
         try (Socket socket = new Socket()) {
             socket.connect(dir);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             //ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
-            objectOutputStream.writeObject(operarEnteros);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            String linea = bufferedReader.readLine();
-            System.out.println(linea);
+            operacion = Operaciones.valueOf("MCD");
+            MensajeCalc<Integer> operar = new MensajeCalc<>(operacion,4,2);
+            objectOutputStream.writeObject(operar);
+            System.out.println(bufferedReader.readLine());
         } catch (IOException e) {
             System.out.println();
 //        } catch (ClassNotFoundException e) {
