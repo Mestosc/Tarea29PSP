@@ -1,3 +1,8 @@
+package cliente;
+
+import comun.MensajeCalc;
+import comun.Operaciones;
+
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;

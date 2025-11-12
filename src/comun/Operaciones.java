@@ -1,3 +1,5 @@
+package comun;
+
 public enum Operaciones {
     SUMA,
     RESTA,

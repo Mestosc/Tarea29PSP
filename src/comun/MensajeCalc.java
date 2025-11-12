@@ -1,3 +1,5 @@
+package comun;
+
 import java.io.Serializable;
 
 public class MensajeCalc<T extends Number> implements Serializable {
