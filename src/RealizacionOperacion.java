@@ -5,9 +5,11 @@ import java.net.Socket;
 
 public class RealizacionOperacion extends Thread {
     Socket socket;
+
     public RealizacionOperacion(Socket socket) {
         this.socket = socket;
     }
+
     private static Number minimoComunMultiplo(Number num1, Number num2) {
         return switch (num1) {
             case Integer i when num2 instanceof Integer -> {
