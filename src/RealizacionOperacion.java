@@ -82,8 +82,8 @@ public class RealizacionOperacion extends Thread {
                     case RESTA -> restar(numero1,number2);
                     case MULTIPLICACION -> multiplicacion(numero1,number2);
                     case DIVISION -> division(numero1,number2);
-                    case MCD -> maximoComunDivisor(numero1.doubleValue(),number2.doubleValue());
-                    case MCM -> minimoComunMultiplo(numero1.doubleValue(),number2.doubleValue());
+                    case MCD -> maximoComunDivisor(numero1,number2);
+                    case MCM -> minimoComunMultiplo(numero1,number2);
                 };
                 writer.println(operacion+": "+numero1+" y "+number2+" = "+resultado);
                 }
