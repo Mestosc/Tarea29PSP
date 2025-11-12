@@ -11,11 +11,11 @@ public class RealizacionOperacion extends Thread {
     private static Number minimoComunMultiplo(Number num1, Number num2) {
         return switch (num1) {
             case Integer i when num2 instanceof Integer -> {
-                int mcd = maximoComunDivisor(i, (Integer) num2).intValue();
+                int mcd = maximoComunDivisor(i,num2).intValue();
                 yield Math.abs(i * (Integer) num2) / mcd;
             }
             case Long l when num2 instanceof Long -> {
-                long mcd = maximoComunDivisor(l, (Long) num2).longValue();
+                long mcd = maximoComunDivisor(l, num2).longValue();
                 yield Math.abs(l * (Long) num2) / mcd;
             }
             default -> {
@@ -24,7 +24,7 @@ public class RealizacionOperacion extends Thread {
             }
         };
     }
-    private static Number maximoComunDivisor(Number num1, Number num2) {
+    private static Number maximoComunDivisor(Number num1, Number num2) { // Aqui aproveche un poquito la ayuda de la IA para hacer algunas cosas algo más dificiles
         return switch (num1) {
             case Integer i when num2 instanceof Integer -> {
                 int a = i;

@@ -5,7 +5,6 @@ import java.net.Socket;
 public class Cliente {
     public static void main(String[] args) {
         InetSocketAddress dir = new InetSocketAddress("localhost", 8000);
-        Operaciones operacion;
         try (Socket socket = new Socket()) {
             socket.connect(dir);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
