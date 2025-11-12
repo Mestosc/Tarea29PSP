@@ -11,8 +11,7 @@ public class Cliente {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             //ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            operacion = Operaciones.valueOf("MCD");
-            MensajeCalc<Integer> operar = new MensajeCalc<>(operacion,4,2);
+            MensajeCalc<Double> operar = new MensajeCalc<>(Operaciones.MULTIPLICACION,4.12,2.12);
             objectOutputStream.writeObject(operar);
             System.out.println(bufferedReader.readLine());
         } catch (IOException e) {
