@@ -4,6 +4,6 @@ sequenceDiagram
   participant S as Servidor
   participant C as Cliente
   C ->> S: Envio informacion de la operacion (Operacion, numero1, numero2)
-  S ->> C: Devuelvo resultado
+  S -->> C: Devuelvo resultado
 
 ```
