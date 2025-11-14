@@ -129,7 +129,7 @@ public class RealizacionOperacion extends Thread {
             case Integer i when b instanceof Integer -> a.intValue() / b.intValue();
             case Long l when b instanceof Long -> a.longValue() / b.longValue();
             case Float v when b instanceof Float -> a.floatValue() / b.floatValue();
-            default -> a.doubleValue() * b.doubleValue();
+            default -> a.doubleValue() / b.doubleValue();
         };
     }
 }
